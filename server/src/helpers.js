@@ -1,0 +1,15 @@
+const hbs = require('hbs');
+
+hbs.registerHelper('obtenerPromedio',(nota1, nota2, nota3)=>{
+    return (nota1+nota2+nota3)/3;
+});
+
+hbs.registerHelper('listar',()=>{
+    listaEstudiantes = require('./listado.json');
+    let texto ='Lista de estudiantes';
+
+    listaEstudiantes.foreach(estudiantes =>{
+        texto = texto +
+                "Nombre"+ estudiantes.nombre+ 'n'
+    })
+})
